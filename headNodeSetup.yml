@@ -19,4 +19,9 @@
 
     - name: make sure iptables save script is in place.
       template: src=/home/teamcrayowulf/head-config-files-temp/iptablessave dest=/etc/network/if-post-down.d/iptablessave
+    
+    - name: Update package lists
+      command: apt-get update
 
+    - name: Install available updates
+      command: apt-get dist-upgrade --yes
