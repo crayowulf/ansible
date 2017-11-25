@@ -23,5 +23,5 @@
     - name: Update package lists
       command: apt-get update
 
-    - name: Install available uprades
+    - name: Install available upgrades
       command: apt-get dist-upgrade --yes
