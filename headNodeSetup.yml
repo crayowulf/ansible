@@ -3,12 +3,20 @@
 - name: Setup head node
   hosts: headNodes
   remote_user: nvidia
+  become: yes
+  become_method: sudo
+  become_user: root
 
   tasks:
-#    - name: make sure gedit is installed at latest version  (for testing ansible)
-#      apt:
-#        name=gedit
-#        state=latest
+    - name: make sure sshd settings are correct.
+      template: src=/home/teamcrayowulf/head-config-files-temp/sshd_config dest=/etc/ssh
 
-    - name: ls in current directory, just for testing
-      shell: touch newfile.txt
+    - name: make sure iptables rules are in place
+      template: src=/home/teamcrayowulf/head-config-files-temp/iptables.rules dest=/etc/iptables.rules
+
+    - name: make sure iptables load script is in place.
+      template: src=/home/teamcrayowulf/head-config-files-temp/iptablesload dest=/etc/network/if-pre-up.d/iptablesload
+
+    - name: make sure iptables save script is in place.
+      template: src=/home/teamcrayowulf/head-config-files-temp/iptablessave dest=/etc/network/if-post-down.d/iptablessave
+
