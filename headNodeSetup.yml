@@ -1,0 +1,14 @@
+---
+#set up the head node in the cluster
+- name: Setup head node
+  hosts: headNodes
+  remote_user: nvidia
+
+  tasks:
+#    - name: make sure gedit is installed at latest version  (for testing ansible)
+#      apt:
+#        name=gedit
+#        state=latest
+
+    - name: ls in current directory, just for testing
+      shell: touch newfile.txt
