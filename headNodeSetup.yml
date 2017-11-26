@@ -9,16 +9,16 @@
 
   tasks:
     - name: make sure sshd settings are correct.
-      template: src=/home/teamcrayowulf/head-config-files-temp/sshd_config dest=/etc/ssh
+      template: src=/home/teamcrayowulf/head-config-files-temp/head/sshd_config dest=/etc/ssh
 
     - name: make sure iptables rules are in place
-      template: src=/home/teamcrayowulf/head-config-files-temp/iptables.rules dest=/etc/iptables.rules
+      template: src=/home/teamcrayowulf/head-config-files-temp/head/iptables.rules dest=/etc/iptables.rules
 
     - name: make sure iptables load script is in place.
-      template: src=/home/teamcrayowulf/head-config-files-temp/iptablesload dest=/etc/network/if-pre-up.d/iptablesload
+      template: src=/home/teamcrayowulf/head-config-files-temp/head/iptablesload dest=/etc/network/if-pre-up.d/iptablesload
 
     - name: make sure iptables save script is in place.
-      template: src=/home/teamcrayowulf/head-config-files-temp/iptablessave dest=/etc/network/if-post-down.d/iptablessave
+      template: src=/home/teamcrayowulf/head-config-files-temp/head/iptablessave dest=/etc/network/if-post-down.d/iptablessave
 
 #    - name: "Disable network manager.  Possible for it to conflict with iptables. 
 #              See the section 'Configuration on startup' https://help.ubuntu.com/community/IptablesHowTo)."
