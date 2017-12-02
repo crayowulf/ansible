@@ -2,6 +2,7 @@
 #set up the head node in the cluster
 - name: Setup head node
   hosts: headNodes
+  gather_facts: no
   remote_user: nvidia
   become: yes
   become_method: sudo
