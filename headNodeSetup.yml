@@ -28,6 +28,9 @@
 #	name: OpenSSH
 #	src: 
 
+    - name: put jetson in high performance mode
+      command: sudo nvpmodel -m 0
+
     - name: make sure iptables rules are in place
       template: src=/home/teamcrayowulf/head-config-files-temp/head/iptables.rules dest=/etc/iptables.rules
 
