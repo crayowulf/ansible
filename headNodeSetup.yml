@@ -11,6 +11,11 @@
     - name: make sure sshd settings are correct.
       template: src=/home/teamcrayowulf/head-config-files-temp/head/sshd_config dest=/etc/ssh
 
+    - name: Make sure UFW is latest version
+      apt:
+        name: ufw
+	state: latest 
+
     - name: make sure iptables rules are in place
       template: src=/home/teamcrayowulf/head-config-files-temp/head/iptables.rules dest=/etc/iptables.rules
 
