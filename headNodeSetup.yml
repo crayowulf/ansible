@@ -21,7 +21,7 @@
 #      ufw: 
 #	direction: incoming
 #	policy: deny
-	   
+
 #    - name: allow ssh from 153.106.113.0/24
 #      ufw: 
 #	rule: allow
