@@ -20,12 +20,6 @@
 
     - name: make sure iptables save script is in place.
       template: src=/home/teamcrayowulf/head-config-files-temp/head/iptablessave dest=/etc/network/if-post-down.d/iptablessave
-
-
-
-#    - name: "Disable network manager.  Possible for it to conflict with iptables. 
-#              See the section 'Configuration on startup' https://help.ubuntu.com/community/IptablesHowTo)."
-#      command: systemctl disable NetworkManager.service 
     
     - name: Update package lists (equivalent to apt-get update)
       apt:
