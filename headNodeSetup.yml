@@ -29,13 +29,10 @@
       apt:
         upgrade: dist
 
-    -name: Install misc necessary packages
-     apt: 
-        name: dhcp 
+    - name: Install misc necessary packages
+      apt: 
+        name: isc-dhcp-server 
         state: installed
-
-    - name: Assign IP addresses to interfaces
-      template: src=/home/teamcrayowulf/head-config-files-temp/head/interfaces dest=/etc/network/interfaces
 
     - name: Enable IP Masquerading
       template: src=/home/teamcrayowulf/head-config-files-temp/head/rc.local dest=/etc/rc.local
