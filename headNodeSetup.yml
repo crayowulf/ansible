@@ -1,7 +1,7 @@
 ---
 #set up the head node in the cluster
 - name: Setup head node
-  hosts: headNodes
+  hosts: headNode
   gather_facts: no
   remote_user: nvidia
   become: yes
