@@ -53,6 +53,11 @@
       apt:
         upgrade: dist
 
+    -name: Install misc necessary packages
+     apt: 
+        name: dhcp 
+        state: installed
+
     - name: Assign IP addresses to interfaces
       template: src=/home/teamcrayowulf/head-config-files-temp/head/interfaces dest=/etc/network/interfaces
 
