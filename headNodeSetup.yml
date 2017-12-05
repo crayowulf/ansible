@@ -28,8 +28,7 @@
 #	name: OpenSSH
 #	src: 
 
-    - name: put jetson in high performance mode
-      command: sudo nvpmodel -m 0
+
 
     - name: make sure iptables rules are in place
       template: src=/home/teamcrayowulf/head-config-files-temp/head/iptables.rules dest=/etc/iptables.rules
@@ -40,11 +39,7 @@
     - name: make sure iptables save script is in place.
       template: src=/home/teamcrayowulf/head-config-files-temp/head/iptablessave dest=/etc/network/if-post-down.d/iptablessave
 
-    - name: Assign IP addresses to interfaces
-      template: src=/home/teamcrayowulf/head-config-files-temp/head/interfaces dest=/etc/network/interfaces
 
-    - name: Enable IP Masquerading
-      template: src=/home/teamcrayowulf/head-config-files-temp/head/rc.local dest=/etc/rc.local
 
 #    - name: "Disable network manager.  Possible for it to conflict with iptables. 
 #              See the section 'Configuration on startup' https://help.ubuntu.com/community/IptablesHowTo)."
@@ -57,3 +52,12 @@
     - name: Install available upgrades (equivalent to apt-get dist-upgrade)
       apt:
         upgrade: dist
+
+    - name: Assign IP addresses to interfaces
+      template: src=/home/teamcrayowulf/head-config-files-temp/head/interfaces dest=/etc/network/interfaces
+
+    - name: Enable IP Masquerading
+      template: src=/home/teamcrayowulf/head-config-files-temp/head/rc.local dest=/etc/rc.local
+
+    - name: put jetson in high performance mode
+      command: nvpmodel -m 0
