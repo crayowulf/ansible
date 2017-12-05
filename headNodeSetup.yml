@@ -12,24 +12,6 @@
     - name: make sure sshd settings are correct.
       template: src=/home/teamcrayowulf/head-config-files-temp/head/sshd_config dest=/etc/ssh
 
-#   - name: enable ufw
-#     ufw: 
-#	interface:
-#	state: enabled
-
-#    - name: deny all incoming traffic
-#      ufw: 
-#	direction: incoming
-#	policy: deny
-
-#    - name: allow ssh from 153.106.113.0/24
-#      ufw: 
-#	rule: allow
-#	name: OpenSSH
-#	src: 
-
-
-
     - name: make sure iptables rules are in place
       template: src=/home/teamcrayowulf/head-config-files-temp/head/iptables.rules dest=/etc/iptables.rules
 
