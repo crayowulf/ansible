@@ -10,16 +10,16 @@
 
   tasks:
     - name: make sure sshd settings are correct.
-      template: src=/home/teamcrayowulf/head-config-files-temp/head/sshd_config dest=/etc/ssh
+      template: src=/home/nvidia/files/head/sshd_config dest=/etc/ssh
 
     - name: make sure iptables rules are in place
-      template: src=/home/teamcrayowulf/head-config-files-temp/head/iptables.rules dest=/etc/iptables.rules
+      template: src=/home/nvidia/files/head/iptables.rules dest=/etc/iptables.rules
 
     - name: make sure iptables load script is in place.
-      template: src=/home/teamcrayowulf/head-config-files-temp/head/iptablesload dest=/etc/network/if-pre-up.d/iptablesload
+      template: src=/home/nvidia/files/head/iptablesload dest=/etc/network/if-pre-up.d/iptablesload
 
     - name: make sure iptables save script is in place.
-      template: src=/home/teamcrayowulf/head-config-files-temp/head/iptablessave dest=/etc/network/if-post-down.d/iptablessave
+      template: src=/home/nvidia/files/head/iptablessave dest=/etc/network/if-post-down.d/iptablessave
     
     - name: Update package lists (equivalent to apt-get update)
       apt:
@@ -35,7 +35,7 @@
         state: installed
 
     - name: Enable IP Masquerading
-      template: src=/home/teamcrayowulf/head-config-files-temp/head/rc.local dest=/etc/rc.local
+      template: src=/home/nvidia/files/head/rc.local dest=/etc/rc.local
 
     - name: put jetson in high performance mode
       command: nvpmodel -m 0
