@@ -37,6 +37,13 @@
         name: isc-dhcp-server 
         state: installed
 
+    - name: Place dhcpd.conf.  This file assigns ip addrs.
+      template: src=/home/nvidia/files/head/dhcpd.conf dest=/etc/dhcp/dhcpd.conf
+
+    - name: Place isc-dhcp-server.  This file tells isc-dhcp-server to only listen on eth1.
+            # prevents you from running a dhcp server on your campus network.
+      template: src=/home/nvidia/files/head/isc-dhcp-server dest=/etc/default/isc-dhcp-server
+
     - name: Enable IP Masquerading
       template: src=/home/nvidia/files/head/rc.local dest=/etc/rc.local
 
