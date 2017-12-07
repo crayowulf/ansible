@@ -20,6 +20,9 @@
 
     - name: make sure iptables save script is in place.
       template: src=/home/nvidia/files/head/iptablessave dest=/etc/network/if-post-down.d/iptablessave
+
+    - name: put jetson in high performance mode
+      command: nvpmodel -m 0
     
     - name: Update package lists (equivalent to apt-get update)
       apt:
@@ -47,5 +50,4 @@
     - name: Enable IP Masquerading
       template: src=/home/nvidia/files/head/rc.local dest=/etc/rc.local
 
-    - name: put jetson in high performance mode
-      command: nvpmodel -m 0
+
