@@ -1,1 +1,1 @@
-ansible-playbook -K -i inventory headNodeSetup.yml
+ansible-playbook -K -c local -i inventory headNodeSetup.yml
