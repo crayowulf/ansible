@@ -35,9 +35,14 @@
     - name: Assign IP addresses to interfaces
       template: src=/home/nvidia/files/head/interfaces dest=/etc/network/interfaces
 
-    - name: Install misc necessary packages
+    - name: Ensure isc-dhcp-server is installed
       apt: 
-        name: isc-dhcp-server 
+        name: isc-dhcp-server
+        state: installed
+
+    - name: Ensure dnsmasq is installed
+      apt: 
+        name: dnsmasq
         state: installed
 
     - name: Place dhcpd.conf.  This file assigns ip addrs.
