@@ -15,12 +15,6 @@
     - name: make sure iptables rules are in place
       template: src=/home/nvidia/files/head/iptables.rules dest=/etc/iptables/rules.v4
 
-    - name: make sure iptables load script is in place.
-      template: src=/home/nvidia/files/head/iptablesload dest=/etc/network/if-pre-up.d/iptablesload
-
-    - name: make sure iptables save script is in place.
-      template: src=/home/nvidia/files/head/iptablessave dest=/etc/network/if-post-down.d/iptablessave
-
     - name: put jetson in high performance mode
       command: nvpmodel -m 0
     
