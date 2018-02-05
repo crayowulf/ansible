@@ -10,7 +10,7 @@
 
   tasks:
     - name: make sure sshd settings are correct.
-      template: src=/home/nvidia/files/head/sshd_config dest=/etc/ssh
+      template: src=/home/nvidia/files/head/sshd_config dest=/etc/ssh/sshd_config
 
     - name: make sure iptables rules are in place
       template: src=/home/nvidia/files/head/iptables.rules dest=/etc/iptables/rules.v4
