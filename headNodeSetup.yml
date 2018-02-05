@@ -55,4 +55,10 @@
     - name: Enable IP Masquerading
       template: src=/home/nvidia/files/head/rc.local dest=/etc/rc.local
 
+    - name: Place dnsmasq.conf.  This file tells dnsmasq to only listen on eth1.
+      template: src=/home/nvidia/files/head/dnsmasq.conf dest=/etc/dnsmasq.conf
+
+    - name: Place hosts file.  This file is used by dnsmasq to assign names to ip addresses
+      template: src=/home/nvidia/files/head/hosts dest=/etc/hosts
+
 
