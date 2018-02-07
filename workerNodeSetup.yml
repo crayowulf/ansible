@@ -1,0 +1,25 @@
+---
+#set up the worker nodes in the cluster
+- name: Setup worker nods
+  hosts: workerNodes
+  gather_facts: no
+  remote_user: nvidia
+  become: yes
+  become_method: sudo
+  become_user: root
+
+  tasks:
+   
+    - name: disable wifi
+      command: nmcli radio wifi off
+
+    - name: put jetson in high performance mode
+      command: nvpmodel -m 0
+    
+#    - name: Update package lists (equivalent to apt-get update)
+#      apt:
+#        update_cache: yes
+
+#    - name: Install available upgrades (equivalent to apt-get dist-upgrade)
+#      apt:
+#        upgrade: dist
