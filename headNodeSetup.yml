@@ -15,6 +15,11 @@
     - name: make sure iptables rules are in place
       template: src=/home/nvidia/files/head/iptables.rules dest=/etc/iptables/rules.v4
 
+    - name: Ensure iptables-persistent is installed
+      apt: 
+        name: iptables-persistent
+        state: installed
+
     - name: put jetson in high performance mode
       command: nvpmodel -m 0
     
