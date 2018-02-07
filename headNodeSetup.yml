@@ -20,6 +20,9 @@
         name: iptables-persistent
         state: installed
 
+    - name: disable wifi
+      command: nmcli radio wifi off
+
     - name: put jetson in high performance mode
       command: nvpmodel -m 0
     
