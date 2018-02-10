@@ -72,3 +72,7 @@
       apt:
         name: nis
         state: installed
+
+    - name: Place /etc/default/nis
+      template: src=/home/nvidia/files/head/nis dest=/etc/default/nis
+
