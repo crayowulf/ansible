@@ -25,6 +25,10 @@
 
     - name: put jetson in high performance mode
       command: nvpmodel -m 0
+
+     #set hostname
+    - hostname:
+        name: headNode
     
 #    - name: Update package lists (equivalent to apt-get update)
 #      apt:
