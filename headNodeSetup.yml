@@ -76,3 +76,6 @@
     - name: Place /etc/default/nis
       template: src=/home/nvidia/files/head/nis dest=/etc/default/nis
 
+    - name: Place /etc/ypserv.securenets
+      template: src=/home/nvidia/files/head/ypserv.securenets dest=/etc/ypserv.securenets
+
