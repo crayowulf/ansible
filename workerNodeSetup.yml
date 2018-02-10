@@ -33,3 +33,6 @@
       apt:
         name: nis
         state: installed
+
+    - name: Place /etc/apt/sources.list (Enables universe repo)
+      template: src=/home/nvidia/files/worker/sources.list dest=/etc/apt/sources.list
