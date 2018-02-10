@@ -23,3 +23,13 @@
     - name: Install available upgrades (equivalent to apt-get dist-upgrade)
       apt:
         upgrade: dist
+
+    - name: Ensure rpcbind is installed (needed for NIS)
+      apt:
+        name: rpcbind
+        state: installed
+
+    - name: Ensure NIS is installed
+      apt:
+        name: nis
+        state: installed
