@@ -62,5 +62,13 @@
 
     - name: Place hosts file.  This file is used by dnsmasq to assign names to ip addresses
       template: src=/home/nvidia/files/head/hosts dest=/etc/hosts
+    
+    - name: Ensure rpcbind is installed (needed for NIS)
+      apt:
+        name: rpcbind
+        state: installed
 
-
+    - name: Ensure NIS is installed
+      apt:
+        name: nis
+        state: installed
