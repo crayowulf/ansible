@@ -15,6 +15,9 @@
 
     - name: put jetson in high performance mode
       command: nvpmodel -m 0
+
+    - name: Place /etc/apt/sources.list (Enables universe repo)
+      template: src=/home/nvidia/files/worker/sources.list dest=/etc/apt/sources.list
     
     - name: Update package lists (equivalent to apt-get update)
       apt:
@@ -33,9 +36,6 @@
       apt:
         name: nis
         state: installed
-
-    - name: Place /etc/apt/sources.list (Enables universe repo)
-      template: src=/home/nvidia/files/worker/sources.list dest=/etc/apt/sources.list
 
     - name: Place /etc/nsswitch.conf
       template: src=/home/nvidia/files/worker/nsswitch.conf dest=/etc/nsswitch.conf
