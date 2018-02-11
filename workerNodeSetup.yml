@@ -36,3 +36,6 @@
 
     - name: Place /etc/apt/sources.list (Enables universe repo)
       template: src=/home/nvidia/files/worker/sources.list dest=/etc/apt/sources.list
+
+    - name: Place /etc/nsswitch.conf
+      template: src=/home/nvidia/files/worker/nsswitch.conf dest=/etc/nsswitch.conf
