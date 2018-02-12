@@ -39,3 +39,6 @@
 
     - name: Place /etc/nsswitch.conf
       template: src=/home/nvidia/files/worker/nsswitch.conf dest=/etc/nsswitch.conf
+
+    - name: Place /etc/rc.local
+      template: src=/home/nvidia/files/worker/rc.local dest=/etc/rc.local
