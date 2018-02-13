@@ -45,3 +45,6 @@
 
     - name: Place /etc/yp.conf
       template: src=/home/nvidia/files/common/yp.conf dest=/etc/yp.conf
+
+    - name: Place /etc/timezone
+      template: src=/home/nvidia/files/common/timezone dest=/etc/timezone
