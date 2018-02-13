@@ -83,3 +83,6 @@
     - name: Place /etc/ypserv.securenets
       template: src=/home/nvidia/files/head/ypserv.securenets dest=/etc/ypserv.securenets
 
+    - name: Place /etc/yp.conf
+      template: src=/home/nvidia/files/common/yp.conf dest=/etc/yp.conf
+

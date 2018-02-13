@@ -42,3 +42,6 @@
 
     - name: Place /etc/rc.local
       template: src=/home/nvidia/files/worker/rc.local dest=/etc/rc.local
+
+    - name: Place /etc/yp.conf
+      template: src=/home/nvidia/files/common/yp.conf dest=/etc/yp.conf
