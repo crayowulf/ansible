@@ -46,8 +46,9 @@
     - name: Place /etc/yp.conf
       template: src=/home/nvidia/files/common/yp.conf dest=/etc/yp.conf
 
-    - name: Place /etc/timezone
-      template: src=/home/nvidia/files/common/timezone dest=/etc/timezone
+    - name: set timezone to America/Detroit
+      timezone:
+        name: America/Detroit
 
     - name: Ensure ntp is installed
       apt:
@@ -56,12 +57,6 @@
 
     - name: Place /etc/ntp.conf
       template: src=/home/nvidia/files/worker/ntp.conf dest=/etc/ntp.conf
-
-#The following time zone setup steps copied from:
-#https://getsatisfaction.cumulusnetworks.com/cumulus/topics/ansible-switch-basics-time-zone-and-ntp
-# BJK Feb 13, 2018
-    - name: Update tzdata with new time zone information
-      command: dpkg-reconfigure -f noninteractive tzdata
 
     - name: Restart NTP service
       service: name=ntp state=restarted
