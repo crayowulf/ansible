@@ -54,6 +54,9 @@
         name: ntp
         state: installed
 
+    - name: Place /etc/ntp.conf
+      template: src=/home/nvidia/files/worker/ntp.conf dest=/etc/ntp.conf
+
 #The following time zone setup steps copied from:
 #https://getsatisfaction.cumulusnetworks.com/cumulus/topics/ansible-switch-basics-time-zone-and-ntp
 # BJK Feb 13, 2018
