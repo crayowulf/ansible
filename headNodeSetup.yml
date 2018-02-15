@@ -89,3 +89,18 @@
     - name: Place /etc/timezone
       template: src=/home/nvidia/files/common/timezone dest=/etc/timezone
 
+    - name: Ensure ntp is installed
+      apt:
+        name: ntp
+        state: installed
+
+#The following time zone setup steps copied from:
+#https://getsatisfaction.cumulusnetworks.com/cumulus/topics/ansible-switch-basics-time-zone-and-ntp
+# BJK Feb 13, 2018
+    - name: Update tzdata with new time zone information
+      command: dpkg-reconfigure -f noninteractive tzdata
+
+    - name: Restart NTP service
+      service: name=ntp state=restarted
+
+# end copied time zone setup steps
