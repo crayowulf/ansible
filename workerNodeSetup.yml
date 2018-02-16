@@ -75,4 +75,7 @@
         path: /media/cluster_files
         state: directory
 
+    - name: Place /etc/fstab
+      template: src=/home/nvidia/files/worker/fstab dest=/etc/fstab
+
 # end copied time zone setup steps
