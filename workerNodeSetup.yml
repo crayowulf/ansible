@@ -65,4 +65,9 @@
     - name: Restart NTP service
       service: name=ntp state=restarted
 
+    - name: Ensure nfs-common is installed (needed to mount NFS shares)
+      apt:
+        name: nfs-common
+        state: installed
+
 # end copied time zone setup steps
