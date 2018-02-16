@@ -101,6 +101,11 @@
     - name: Restart NTP service
       service: name=ntp state=restarted
 
+    - name: Ensure nfs-kernel-server is installed
+      apt:
+        name: nfs-kernel-server
+        state: installed
+
     - name: Place /etc/exports
       template: src=/home/nvidia/files/head/exports dest=/etc/exports
 
