@@ -16,6 +16,10 @@
     - name: put jetson in high performance mode
       command: nvpmodel -m 0
 
+     #set hostname
+    - hostname:
+        name: {{custom_hostname}}
+
     - name: Place /etc/apt/sources.list (Enables universe repo)
       template: src=/home/nvidia/files/worker/sources.list dest=/etc/apt/sources.list
     

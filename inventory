@@ -4,7 +4,7 @@
 localhost
 
 [workerNodes]
-worker01
-worker02
+worker01 custom_hostname=worker01
+worker02 custom_hostname=worker02
 
 
