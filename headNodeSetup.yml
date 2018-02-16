@@ -100,3 +100,6 @@
 
     - name: Restart NTP service
       service: name=ntp state=restarted
+
+    - name: Place /etc/exports
+      template: src=/home/nvidia/files/head/exports dest=/etc/exports
