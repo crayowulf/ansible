@@ -103,3 +103,6 @@
 
     - name: Place /etc/exports
       template: src=/home/nvidia/files/head/exports dest=/etc/exports
+
+    - name: Place /etc/fstab
+      template: src=/home/nvidia/files/head/fstab dest=/etc/fstab
