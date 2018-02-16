@@ -74,6 +74,7 @@
       file:
         path: /media/cluster_files
         state: directory
+        mode: u=rwx, g=rwx, o=r
 
     - name: Place /etc/fstab
       template: src=/home/nvidia/files/worker/fstab dest=/etc/fstab
