@@ -31,6 +31,9 @@
       apt:
         upgrade: dist
 
+    - name: Place hosts file.  This file is used to mount the NFS share at boot time, before dns is available(?)
+      template: src=/home/nvidia/files/worker/hosts dest=/etc/hosts
+
     - name: Ensure rpcbind is installed (needed for NIS)
       apt:
         name: rpcbind
