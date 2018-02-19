@@ -30,7 +30,7 @@
       file:
         path: /homex
         state: directory
-        mode: 0751
+        mode: "u=rwx,g=rx,o=rx"
 
      #set hostname
     - hostname:
