@@ -16,6 +16,12 @@
     - name: put jetson in high performance mode
       command: nvpmodel -m 0
 
+    - name: Create /homex
+      file:
+        path: /homex
+        state: directory
+        mode: "u=rwx,g=rx,o=rx"
+
      #set hostname
     - hostname:
         name: "{{custom_hostname}}"
