@@ -13,6 +13,17 @@
     - name: disable wifi
       command: nmcli radio wifi off
 
+    - name: make sure sshd settings are correct.
+      template: src=/home/nvidia/files/worker/sshd_config dest=/etc/ssh/sshd_config
+
+    - name: make sure iptables rules are in place
+      template: src=/home/nvidia/files/worker/iptables.rules dest=/etc/iptables/rules.v4
+
+    - name: Ensure iptables-persistent is installed
+      apt: 
+        name: iptables-persistent
+        state: installed
+
     - name: put jetson in high performance mode
       command: nvpmodel -m 0
 
