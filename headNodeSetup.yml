@@ -117,3 +117,17 @@
 
     - name: Place /etc/fstab
       template: src=/home/nvidia/files/head/fstab dest=/etc/fstab
+
+    - name: Ensure rsh-redone-client is installed
+      apt:
+        name: rsh-redone-client
+        state: installed
+
+    - name: Ensure rsh-redone-server is installed
+      apt:
+        name: rsh-redone-server
+        state: installed
+
+    - name: Place /home/nvidia/.rhosts
+      template: src=/home/nvidia/files/common/.rhosts dest=/home/nvidia/.rhosts
+
