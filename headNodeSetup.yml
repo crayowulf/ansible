@@ -129,8 +129,5 @@
         state: installed
 
     - name: Place /home/nvidia/.rhosts
-      - template: 
-        src: /home/nvidia/files/common/.rhosts 
-        dest: /home/nvidia/.rhosts
-        owner: nvidia
-        group: nvidia
+      template: src=/home/nvidia/files/common/.rhosts dest=/home/nvidia/.rhosts owner=nvidia group=nvidia
+
