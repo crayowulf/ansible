@@ -112,5 +112,6 @@
 
     - name: Place /home/nvidia/.rhosts
       template: src=/home/nvidia/files/common/.rhosts dest=/home/nvidia/.rhosts
-
+        owner: nvidia
+        group: nvidia
 # end copied time zone setup steps
