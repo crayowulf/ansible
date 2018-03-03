@@ -113,4 +113,6 @@
     - name: Place /home/nvidia/.rhosts
       template: src=/home/nvidia/files/common/.rhosts dest=/home/nvidia/.rhosts owner=nvidia group=nvidia
 
+    - name: Place /etc/openmpi/openmpi-mca-params.conf  (Open MPI settings)
+      template: src=/home/nvidia/files/common/openmpi-mca-params.conf dest=/etc/openmpi/openmpi-mca-params.conf
 # end copied time zone setup steps
