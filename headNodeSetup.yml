@@ -26,9 +26,9 @@
     - name: put jetson in high performance mode
       command: nvpmodel -m 0
     
-    - name: Create /homex
+    - name: Create /home2
       file:
-        path: /homex
+        path: /home2
         state: directory
         mode: "u=rwx,g=rx,o=rx"
 
