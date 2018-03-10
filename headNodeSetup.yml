@@ -136,3 +136,8 @@
 
     - name: Place /etc/openmpi/openmpi-default-hostfile  (Hosts available for Open MPI jobs)
       template: src=/home/nvidia/files/common/openmpi-default-hostfile dest=/etc/openmpi/openmpi-default-hostfile
+
+    - name: Ensure libopenblas-dev is installed (Prerequisite for CUDA-Enabled HPL Benchmark)
+      apt:
+        name: libopenblas-dev
+        state: installed
