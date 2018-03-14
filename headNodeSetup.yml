@@ -151,3 +151,13 @@
       apt:
         name: libopenmpi1.10
         state: installed
+
+    - name: Ensure build-essential is installed (needed to rebuild the openmpi package)
+      apt:
+        name: build-essential
+        state: installed
+
+    - name: Ensure fakeroot is installed (needed to rebuild the openmpi package)
+      apt:
+        name: fakeroot
+        state: installed
