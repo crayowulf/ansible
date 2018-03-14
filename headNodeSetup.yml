@@ -161,3 +161,8 @@
       apt:
         name: fakeroot
         state: installed
+
+    - name: Ensure dpkg-dev is installed (needed to rebuild the openmpi package)
+      apt:
+        name: dpkg-dev
+        state: installed
