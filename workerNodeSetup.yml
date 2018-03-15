@@ -159,9 +159,12 @@
     - name: hold libopenmpi1.10
       command: apt-mark hold libopenmpi1.10
 
-    - name: Ensure custom openmpi-bin is installed
-      apt:
-        deb: https://github.com/crayowulf/files/raw/master/common/openmpi-bin_1.10.2-8ubuntu1_arm64.deb
+    - name: place custom openmpi-bin installer
+      template:
+        src: /home/nvidia/files/common/openmpi-bin_1.10.2-8ubuntu1_arm64.deb dest=/home/nvidia/
+
+    - name: install openmpi-bin
+      command: dpkg -i -B --force-depends  /home/nvidia/openmpi-bin_1.10.2-8ubuntu1_arm64.deb
 
     - name: hold openmpi-bin
       command: apt-mark hold openmpi-bin
