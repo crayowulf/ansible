@@ -135,19 +135,19 @@
 
 #Note: you may have to edit the links to the .deb files if their hosting location
 #changes in the future.
-    - name: Ensure custom openmpi-common is installed
-      apt:
-        deb: https://github.com/crayowulf/files/raw/master/common/openmpi-common_1.10.2-8ubuntu1_all.deb
-
-    - name: hold openmpi-common
-      command: apt-mark hold openmpi-common
-
     - name: Ensure custom openmpi-bin is installed
       apt:
         deb: https://github.com/crayowulf/files/raw/master/common/openmpi-bin_1.10.2-8ubuntu1_arm64.deb
 
     - name: hold openmpi-bin
       command: apt-mark hold openmpi-bin
+
+    - name: Ensure custom openmpi-common is installed
+      apt:
+        deb: https://github.com/crayowulf/files/raw/master/common/openmpi-common_1.10.2-8ubuntu1_all.deb
+
+    - name: hold openmpi-common
+      command: apt-mark hold openmpi-common
 
     - name: Ensure custom openmpi-doc is installed
       apt:
