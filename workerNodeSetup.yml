@@ -160,7 +160,7 @@
       command: apt-mark hold libopenmpi1.10
 
     #place custom openmpi-bin installer
-      -synchronize:
+    - synchronize:
          src: /home/nvidia/files/common/openmpi-bin_1.10.2-8ubuntu1_arm64.deb
          dest: /home/nvidia/openmpi-bin_1.10.2-8ubuntu1_arm64.deb
 
