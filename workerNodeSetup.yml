@@ -107,12 +107,6 @@
     - name: Place /home/nvidia/.rhosts
       template: src=/home/nvidia/files/common/.rhosts dest=/home/nvidia/.rhosts owner=nvidia group=nvidia
 
-    - name: Place /etc/openmpi/openmpi-mca-params.conf  (Open MPI settings)
-      template: src=/home/nvidia/files/common/openmpi-mca-params.conf dest=/etc/openmpi/openmpi-mca-params.conf
-
-    - name: Place /etc/openmpi/openmpi-default-hostfile  (Hosts available for Open MPI jobs)
-      template: src=/home/nvidia/files/common/openmpi-default-hostfile dest=/etc/openmpi/openmpi-default-hostfile
-
     - name: Ensure libopenblas-dev is installed (Prerequisite for CUDA-Enabled HPL Benchmark)
       apt:
         name: libopenblas-dev
@@ -169,4 +163,11 @@
 
     - name: hold libopenmpi1.10
       command: apt-mark hold libopenmpi1.10
+
+    - name: Place /etc/openmpi/openmpi-mca-params.conf  (Open MPI settings)
+      template: src=/home/nvidia/files/common/openmpi-mca-params.conf dest=/etc/openmpi/openmpi-mca-params.conf
+
+    - name: Place /etc/openmpi/openmpi-default-hostfile  (Hosts available for Open MPI jobs)
+      template: src=/home/nvidia/files/common/openmpi-default-hostfile dest=/etc/openmpi/openmpi-default-hostfile
+      
 # end copied time zone setup steps
