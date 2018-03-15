@@ -129,12 +129,7 @@
 
 #Note: you may have to edit the links to the .deb files if their hosting location
 #changes in the future.
-    - name: Ensure custom openmpi-bin is installed
-      apt:
-        deb: https://github.com/crayowulf/files/raw/master/common/openmpi-bin_1.10.2-8ubuntu1_arm64.deb
 
-    - name: hold openmpi-bin
-      command: apt-mark hold openmpi-bin
 
     - name: Ensure custom openmpi-common is installed
       apt:
@@ -164,10 +159,18 @@
     - name: hold libopenmpi1.10
       command: apt-mark hold libopenmpi1.10
 
+    - name: Ensure custom openmpi-bin is installed
+      apt:
+        deb: https://github.com/crayowulf/files/raw/master/common/openmpi-bin_1.10.2-8ubuntu1_arm64.deb
+
+    - name: hold openmpi-bin
+      command: apt-mark hold openmpi-bin
+
+
     - name: Place /etc/openmpi/openmpi-mca-params.conf  (Open MPI settings)
       template: src=/home/nvidia/files/common/openmpi-mca-params.conf dest=/etc/openmpi/openmpi-mca-params.conf
 
     - name: Place /etc/openmpi/openmpi-default-hostfile  (Hosts available for Open MPI jobs)
       template: src=/home/nvidia/files/common/openmpi-default-hostfile dest=/etc/openmpi/openmpi-default-hostfile
-      
+
 # end copied time zone setup steps
