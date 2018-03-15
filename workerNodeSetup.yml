@@ -118,4 +118,19 @@
         name: libopenblas-dev
         state: installed
 
+    - name: Ensure openmpi-bin  is not installed
+      apt:
+        name: openmpi-bin
+        state: absent
+
+    - name: Ensure libopenmpi1.10  is not installed
+      apt:
+        name: libopenmpi1.10
+        state: absent
+
+    - name: Ensure libopenmpi-dev  is not installed
+      apt:
+        name: libopenmpi-dev
+        state: absent
+
 # end copied time zone setup steps
