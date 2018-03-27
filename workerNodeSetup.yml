@@ -112,64 +112,15 @@
         name: libopenblas-dev
         state: installed
 
-    # - name: Ensure openmpi-bin  is not installed
-    #   apt:
-    #     name: openmpi-bin
-    #     state: absent
-    #
-    # - name: Ensure libopenmpi1.10  is not installed
-    #   apt:
-    #     name: libopenmpi1.10
-    #     state: absent
-    #
-    # - name: Ensure libopenmpi-dev  is not installed
-    #   apt:
-    #     name: libopenmpi-dev
-    #     state: absent
-
-#Note: you may have to edit the links to the .deb files if their hosting location
-#changes in the future.
-
-
-    - name: Ensure custom openmpi-common is installed
+    - name: Ensure libopenmpi-dev is installed (Prerequisite for CUDA-Enabled HPL Benchmark)
       apt:
-        deb: https://github.com/crayowulf/files/raw/master/common/openmpi-common_1.10.2-8ubuntu1_all.deb
+        name: libopenmpi-dev
+        state: installed
 
-    - name: hold openmpi-common
-      command: apt-mark hold openmpi-common
-
-    - name: Ensure custom openmpi-doc is installed
+    - name: Ensure libopenmpi1.10 is installed (Prerequisite for CUDA-Enabled HPL Benchmark)
       apt:
-        deb: https://github.com/crayowulf/files/raw/master/common/openmpi-doc_1.10.2-8ubuntu1_all.deb
-
-    - name: hold openmpi-doc
-      command: apt-mark hold openmpi-doc
-
-    - name: Ensure custom libopenmpi-dev is installed
-      apt:
-        deb: https://github.com/crayowulf/files/raw/master/common/libopenmpi-dev_1.10.2-8ubuntu1_arm64.deb
-
-    - name: hold libopenmpi-dev
-      command: apt-mark hold libopenmpi-dev
-
-    - name: Ensure custom libopenmpi1.10 is installed
-      apt:
-        deb: https://github.com/crayowulf/files/raw/master/common/libopenmpi1.10_1.10.2-8ubuntu1_arm64.deb
-
-    - name: hold libopenmpi1.10
-      command: apt-mark hold libopenmpi1.10
-
-    #place custom openmpi-bin installer
-    - synchronize:
-         src: /home/nvidia/files/common/openmpi-bin_1.10.2-8ubuntu1_arm64.deb
-         dest: /home/nvidia/openmpi-bin_1.10.2-8ubuntu1_arm64.deb
-
-    - name: install openmpi-bin
-      command: dpkg -i -B --force-depends  /home/nvidia/openmpi-bin_1.10.2-8ubuntu1_arm64.deb
-
-    - name: hold openmpi-bin
-      command: apt-mark hold openmpi-bin
-
+        name: libopenmpi1.10
+        state: installed
 
     - name: Place /etc/openmpi/openmpi-mca-params.conf  (Open MPI settings)
       template: src=/home/nvidia/files/common/openmpi-mca-params.conf dest=/etc/openmpi/openmpi-mca-params.conf
