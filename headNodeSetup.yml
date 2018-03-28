@@ -16,7 +16,7 @@
       template: src=/home/nvidia/files/head/iptables.rules dest=/etc/iptables/rules.v4
 
     - name: Ensure iptables-persistent is installed
-      apt: 
+      apt:
         name: iptables-persistent
         state: installed
 
@@ -25,7 +25,7 @@
 
     - name: put jetson in high performance mode
       command: nvpmodel -m 0
-    
+
     - name: Create /home2
       file:
         path: /home2
@@ -35,7 +35,7 @@
      #set hostname
     - hostname:
         name: headNode
-    
+
 #    - name: Update package lists (equivalent to apt-get update)
 #      apt:
 #        update_cache: yes
@@ -48,12 +48,12 @@
       template: src=/home/nvidia/files/head/interfaces dest=/etc/network/interfaces
 
     - name: Ensure isc-dhcp-server is installed
-      apt: 
+      apt:
         name: isc-dhcp-server
         state: installed
 
     - name: Ensure dnsmasq is installed
-      apt: 
+      apt:
         name: dnsmasq
         state: installed
 
@@ -72,7 +72,7 @@
 
     - name: Place hosts file.  This file is used by dnsmasq to assign names to ip addresses
       template: src=/home/nvidia/files/head/hosts dest=/etc/hosts
-    
+
     - name: Ensure rpcbind is installed (needed for NIS)
       apt:
         name: rpcbind
@@ -118,6 +118,7 @@
     - name: Place /etc/fstab
       template: src=/home/nvidia/files/head/fstab dest=/etc/fstab
 
+    # steps after this might fail if a reboot is not performed.  
     - name: Ensure rsh-redone-client is installed
       apt:
         name: rsh-redone-client
