@@ -36,7 +36,7 @@
       apt:
         name: openmpi-doc
         state: absent
-        
+
 #begin install tasks
     - name: Ensure custom openmpi-common is installed
       apt:
@@ -52,13 +52,6 @@
     - name: hold openmpi-doc
       command: apt-mark hold openmpi-doc
 
-    - name: Ensure custom libopenmpi-dev is installed
-      apt:
-        deb: /home2/shared_install_files/openmpi/libopenmpi-dev_1.10.99_arm64.deb
-
-    - name: hold libopenmpi-dev
-      command: apt-mark hold libopenmpi-dev
-
     - name: Ensure custom libopenmpi1.10 is installed
       apt:
         deb: /home2/shared_install_files/openmpi/libopenmpi1.10_1.10.99_arm64.deb
@@ -72,6 +65,13 @@
 
     - name: hold openmpi-bin
       command: apt-mark hold openmpi-bin
+
+    - name: Ensure custom libopenmpi-dev is installed
+      apt:
+        deb: /home2/shared_install_files/openmpi/libopenmpi-dev_1.10.99_arm64.deb
+
+    - name: hold libopenmpi-dev
+      command: apt-mark hold libopenmpi-dev
 
     - name: Place /etc/openmpi/openmpi-mca-params.conf  (Open MPI settings)
       template: src=/home/nvidia/files/common/openmpi-mca-params.conf dest=/etc/openmpi/openmpi-mca-params.conf
