@@ -118,7 +118,7 @@
     - name: Place /etc/fstab
       template: src=/home/nvidia/files/head/fstab dest=/etc/fstab
 
-    # steps after this might fail if a reboot is not performed.  
+    # steps after this might fail if a reboot is not performed.
     - name: Ensure rsh-redone-client is installed
       apt:
         name: rsh-redone-client
@@ -133,9 +133,9 @@
       template: src=/home/nvidia/files/common/.rhosts dest=/home/nvidia/.rhosts owner=nvidia group=nvidia
 
 # create directory to store .deb files that ansible needs to access (e.g. openmpi).
-    - name: Create /home2/share
+    - name: Create /home2/shared_install_files
       file:
-        path: /home2/share
+        path: /home2/shared_install_files
         state: directory
         mode: "u=rwx,g=rx,o=rx"
 
