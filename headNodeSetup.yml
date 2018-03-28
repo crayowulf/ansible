@@ -132,6 +132,13 @@
     - name: Place /home/nvidia/.rhosts
       template: src=/home/nvidia/files/common/.rhosts dest=/home/nvidia/.rhosts owner=nvidia group=nvidia
 
+# create directory to store .deb files that ansible needs to access (e.g. openmpi).
+    - name: Create /home2/share
+      file:
+        path: /home2/share
+        state: directory
+        mode: "u=rwx,g=rx,o=rx"
+
     - name: Place /etc/openmpi/openmpi-mca-params.conf  (Open MPI settings)
       template: src=/home/nvidia/files/common/openmpi-mca-params.conf dest=/etc/openmpi/openmpi-mca-params.conf
 
