@@ -13,8 +13,10 @@
 #tasks will need to be commented out or otherwise disabled.
 
     -name: Purge all openmpi packages
-     command: apt-get purge openmpi* libopenmpi*
+     command: apt-get purge openmpi*s
 
+    -name: Purge all libopenmpi packages
+     command: apt-get purge libopenmpi*
 #begin install tasks
     - name: Ensure custom openmpi-common is installed
       apt:
