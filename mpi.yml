@@ -79,13 +79,6 @@
     - name: Place /etc/openmpi/openmpi-default-hostfile  (Hosts available for Open MPI jobs)
       template: src=/home/nvidia/files/common/openmpi-default-hostfile dest=/etc/openmpi/openmpi-default-hostfile
 
-    - name: Link /usr/lib/openmpi/lib/libmca_common_cuda.so.1 to /usr/lib/openmpi/lib/libmca_common_cuda.so
-      file:
-        src: libmca_common_cuda.so.1.0.7
-        dest: /usr/lib/openmpi/lib/libmca_common_cuda.so.1
-        state: link
-        force: yes
-
     - name: Ensure libopenblas-dev is installed (Prerequisite for CUDA-Enabled HPL Benchmark)
       apt:
         name: libopenblas-dev
