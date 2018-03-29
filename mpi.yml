@@ -11,7 +11,7 @@
   tasks:
 #If re-running the playbook due to one of the install tasks failing, these uninstall
 #tasks will need to be commented out or otherwise disabled.
- - name: Ensure openmpi-common  is not installed
+    - name: Ensure openmpi-common  is not installed
       apt:
         name: openmpi-common
         state: absent
@@ -35,7 +35,7 @@
       apt:
         name: openmpi-doc
         state: absent
-        
+
 #begin install tasks
     - name: Ensure custom openmpi-common is installed
       apt:
