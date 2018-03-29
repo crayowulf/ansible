@@ -1,6 +1,6 @@
 ---
 #set up the worker nodes in the cluster
-- name: Setup worker nods
+- name: Setup worker nodes
   hosts: workerNodes
   gather_facts: no
   remote_user: nvidia
