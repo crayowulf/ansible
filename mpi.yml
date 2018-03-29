@@ -11,12 +11,31 @@
   tasks:
 #If re-running the playbook due to one of the install tasks failing, these uninstall
 #tasks will need to be commented out or otherwise disabled.
+ - name: Ensure openmpi-common  is not installed
+      apt:
+        name: openmpi-common
+        state: absent
 
-    -name: Purge all openmpi packages
-     command: apt-get purge openmpi*s
+    - name: Ensure openmpi-bin  is not installed
+      apt:
+        name: openmpi-bin
+        state: absent
 
-    -name: Purge all libopenmpi packages
-     command: apt-get purge libopenmpi*
+    - name: Ensure libopenmpi1.10  is not installed
+      apt:
+        name: libopenmpi1.10
+        state: absent
+
+    - name: Ensure libopenmpi-dev  is not installed
+      apt:
+        name: libopenmpi-dev
+        state: absent
+
+    - name: Ensure openmpi-doc  is not installed
+      apt:
+        name: openmpi-doc
+        state: absent
+        
 #begin install tasks
     - name: Ensure custom openmpi-common is installed
       apt:
