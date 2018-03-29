@@ -82,7 +82,7 @@
     - name: Link /usr/lib/openmpi/lib/libmca_common_cuda.so.1 to /usr/lib/openmpi/lib/libmca_common_cuda.so
       file:
         src: /usr/lib/openmpi/lib/libmca_common_cuda.so
-        dest: /usr/lib/openmpi/lib/libmca_common_cuda.so.1
+        dest: libmca_common_cuda.so.1.0.7
         state: link
         force: yes
 
