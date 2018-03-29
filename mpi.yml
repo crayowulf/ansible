@@ -40,35 +40,35 @@
 #begin install tasks
     - name: Ensure custom openmpi-common is installed
       apt:
-        deb: /home2/shared_install_files/openmpi/openmpi-common_1.10.99_all.deb
+        deb: /home2/shared_install_files/openmpi/openmpi-common_1.10.102_all.deb
 
     - name: hold openmpi-common
       command: apt-mark hold openmpi-common
 
     - name: Ensure custom openmpi-doc is installed
       apt:
-        deb: /home2/shared_install_files/openmpi/openmpi-doc_1.10.99_all.deb
+        deb: /home2/shared_install_files/openmpi/openmpi-doc_1.10.102_all.deb
 
     - name: hold openmpi-doc
       command: apt-mark hold openmpi-doc
 
     - name: Ensure custom libopenmpi1.10 is installed
       apt:
-        deb: /home2/shared_install_files/openmpi/libopenmpi1.10_1.10.99_arm64.deb
+        deb: /home2/shared_install_files/openmpi/libopenmpi1.10_1.10.102_arm64.deb
 
     - name: hold libopenmpi1.10
       command: apt-mark hold libopenmpi1.10
 
     - name: Ensure custom openmpi-bin is installed
       apt:
-        deb: /home2/shared_install_files/openmpi/openmpi-bin_1.10.99_arm64.deb
+        deb: /home2/shared_install_files/openmpi/openmpi-bin_1.10.102_arm64.deb
 
     - name: hold openmpi-bin
       command: apt-mark hold openmpi-bin
 
     - name: Ensure custom libopenmpi-dev is installed
       apt:
-        deb: /home2/shared_install_files/openmpi/libopenmpi-dev_1.10.99_arm64.deb
+        deb: /home2/shared_install_files/openmpi/libopenmpi-dev_1.10.102_arm64.deb
 
     - name: hold libopenmpi-dev
       command: apt-mark hold libopenmpi-dev
