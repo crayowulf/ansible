@@ -84,6 +84,7 @@
         src: /usr/lib/openmpi/lib/libmca_common_cuda.so
         dest: /usr/lib/openmpi/lib/libmca_common_cuda.so.1
         state: link
+        force: yes
 
     - name: Ensure libopenblas-dev is installed (Prerequisite for CUDA-Enabled HPL Benchmark)
       apt:
