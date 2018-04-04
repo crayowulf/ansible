@@ -113,4 +113,8 @@
     - name: Place /etc/openmpi/openmpi-default-hostfile  (Hosts available for Open MPI jobs)
       template: src=/home/nvidia/files/common/openmpi-default-hostfile dest=/etc/openmpi/openmpi-default-hostfile
 
+    - name: Ensure csh is installed (prerequisite for building NAMD)
+      apt:
+        name: csh
+        state: installed
 # end copied time zone setup steps
