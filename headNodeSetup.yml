@@ -92,6 +92,9 @@
     - name: Place /etc/yp.conf
       template: src=/home/nvidia/files/common/yp.conf dest=/etc/yp.conf
 
+    - name: Place /var/yp/Makefile
+      template: src=/home/nvidia/files/head/Makefile_NIS dest=/var/yp/Makefile
+
     - name: set timezone to America/Detroit
       timezone:
         name: America/Detroit
