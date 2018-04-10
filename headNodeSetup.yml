@@ -163,3 +163,15 @@
       apt:
         name: csh
         state: present
+
+    - name: set permissions on .ssh in home directory on nfs
+      file:
+        path: /home2/ben/.ssh
+        state: directory
+        mode: "u=rwx,g=,o="
+
+    - name: set permissions on .ssh/authorized_keys in home directory on nfs
+      file:
+        path: /home2/ben/.ssh/authorized_keys
+        state: file
+        mode: "u=rw,g=,o="
