@@ -168,7 +168,7 @@
       file:
         path: /home2/ben/
         state: directory
-        mode: "u=rwx,g=xr,o=x"
+        mode: "u=rwx,g=rx,o=rx"
 
     - name: set permissions on .ssh in home directory on nfs
       file:
