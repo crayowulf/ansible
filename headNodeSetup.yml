@@ -164,6 +164,12 @@
         name: csh
         state: present
 
+    - name: set permissions on home directory on nfs share
+      file:
+        path: /home2/ben/
+        state: directory
+        mode: "u=rwx,g=,o="
+
     - name: set permissions on .ssh in home directory on nfs
       file:
         path: /home2/ben/.ssh
