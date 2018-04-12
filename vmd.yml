@@ -1,5 +1,5 @@
 ---
-- name: Setup for building VMD:  http://www.ks.uiuc.edu/Research/vmd/
+- name: Setup for building VMD  www.ks.uiuc.edu/Research/vmd/
   hosts: headNode
   gather_facts: no
   remote_user: nvidia
