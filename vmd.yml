@@ -1,0 +1,26 @@
+---
+- name: Setup for building VMD:  http://www.ks.uiuc.edu/Research/vmd/
+  hosts: headNode
+  gather_facts: no
+  remote_user: nvidia
+  become: yes
+  become_method: sudo
+  become_user: root
+
+  tasks:
+#If re-running the playbook due to one of the install tasks failing, these uninstall
+#tasks will need to be commented out or otherwise disabled.
+    - name: Ensure tcl8.5  is installed
+      apt:
+        name: tcl8.5
+        state: present
+
+    - name: Ensure tcl8.5-dev  is installed
+      apt:
+        name: tcl8.5-dev
+        state: present
+
+    - name: Ensure libtcl8.5  is installed
+      apt:
+        name: libtcl8.5
+        state: present
