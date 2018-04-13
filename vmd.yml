@@ -75,3 +75,8 @@
       apt:
         name: libtachyon-dev-common
         state: present
+
+    - name: Ensure tachyon-bin-ogl is installed
+      apt:
+        name: tachyon-bin-ogl
+        state: present
