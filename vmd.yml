@@ -28,21 +28,21 @@
         name: libtcl8.6
         state: absent
 
-#Install tcl8.5
+#Install tcl8.4
 
-    - name: Ensure tcl8.5  is installed
+    - name: Ensure tcl8.4  is installed
       apt:
-        name: tcl8.5
+        name: tcl8.4
         state: present
 
-    - name: Ensure tcl8.5-dev  is installed
+    - name: Ensure tcl8.4-dev  is installed
       apt:
-        name: tcl8.5-dev
+        name: tcl8.4-dev
         state: present
 
-    - name: Ensure libtcl8.5  is installed
+    - name: Ensure libtcl8.4  is installed
       apt:
-        name: libtcl8.5
+        name: libtcl8.4
         state: present
 
 #Install other dependencies
