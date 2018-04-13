@@ -117,4 +117,9 @@
       apt:
         name: csh
         state: installed
+
+    - name: Ensure arduino is installed
+      apt:
+        name: arduino
+        state: present
 # end copied time zone setup steps

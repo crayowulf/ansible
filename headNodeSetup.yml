@@ -188,3 +188,8 @@
         state: directory
         owner: ben
         mode: "u=rwx,g=rx,o=rx"
+
+    - name: Ensure arduino is installed
+      apt:
+        name: arduino
+        state: present
