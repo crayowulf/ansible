@@ -28,21 +28,21 @@
         name: libtcl8.6
         state: absent
 
-#Install tcl8.4
+#Install tcl8.5
 
-    - name: Ensure tcl8.4  is installed
+    - name: Ensure tcl8.5  is installed
       apt:
-        name: tcl8.4
+        name: tcl8.5
         state: present
 
-    - name: Ensure tcl8.4-dev  is installed
+    - name: Ensure tcl8.5-dev  is installed
       apt:
-        name: tcl8.4-dev
+        name: tcl8.5-dev
         state: present
 
-    - name: Ensure libtcl8.4  is installed
+    - name: Ensure libtcl8.5  is installed
       apt:
-        name: libtcl8.4
+        name: libtcl8.5
         state: present
 
 # Install FLTK
