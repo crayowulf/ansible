@@ -10,6 +10,26 @@
   tasks:
 #If re-running the playbook due to one of the install tasks failing, these uninstall
 #tasks will need to be commented out or otherwise disabled.
+
+#Uninstall tcl8.6
+
+    - name: Ensure tcl8.6  is NOT installed
+      apt:
+        name: tcl8.6
+        state: absent
+
+    - name: Ensure tcl8.6-dev  is NOT installed
+      apt:
+        name: tcl8.6-dev
+        state: absent
+
+    - name: Ensure libtcl8.6  is NOT installed
+      apt:
+        name: libtcl8.6
+        state: absent
+
+#Install tcl8.5
+
     - name: Ensure tcl8.5  is installed
       apt:
         name: tcl8.5
