@@ -44,3 +44,10 @@
       apt:
         name: libtcl8.5
         state: present
+
+#Install netcdf
+
+    - name: Ensure libnetcdf-dev is installed
+      apt:
+        name: libnetcdf-dev
+        state: present
