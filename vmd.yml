@@ -45,9 +45,14 @@
         name: libtcl8.5
         state: present
 
-#Install netcdf
+#Install other dependencies
 
     - name: Ensure libnetcdf-dev is installed
       apt:
         name: libnetcdf-dev
+        state: present
+
+    - name: Ensure libtachyon-dev-common is installed
+      apt:
+        name: libtachyon-dev-common
         state: present
