@@ -80,3 +80,8 @@
       apt:
         name: tachyon-bin-ogl
         state: present
+
+    - name: Ensure libtachyon-mt-0-dev is installed
+      apt:
+        name: libtachyon-mt-0-dev
+        state: present
