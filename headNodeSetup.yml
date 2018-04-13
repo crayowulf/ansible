@@ -181,3 +181,10 @@
         path: /home2/ben/.ssh/authorized_keys
         state: file
         mode: "u=rw,g=,o="
+
+    - name: Create /home2/bin (Shared executable files, e.g. VMD and NAMD)
+      file:
+        path: /home2/bin
+        state: directory
+        owner: ben
+        mode: "u=rwx,g=rx,o=rx"
