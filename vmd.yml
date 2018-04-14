@@ -13,20 +13,20 @@
 
 #Uninstall tcl8.6
 
-    - name: Ensure tcl8.6  is NOT installed
+    - name: Ensure tcl8.6  is installed
       apt:
         name: tcl8.6
-        state: absent
+        state: present
 
-    - name: Ensure tcl8.6-dev  is NOT installed
+    - name: Ensure tcl8.6-dev  is installed
       apt:
         name: tcl8.6-dev
-        state: absent
+        state: present
 
-    - name: Ensure libtcl8.6  is NOT installed
+    - name: Ensure libtcl8.6  is installed
       apt:
         name: libtcl8.6
-        state: absent
+        state: present
 
 #Install tcl8.5
 
