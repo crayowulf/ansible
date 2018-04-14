@@ -122,4 +122,14 @@
       apt:
         name: arduino
         state: present
+
+    - name: Ensure sysstat is installed
+      apt:
+        name: sysstat
+        state: present
+
+    - name: Ensure lm-sensors is installed
+      apt:
+        name: lm-sensors
+        state: present
 # end copied time zone setup steps
