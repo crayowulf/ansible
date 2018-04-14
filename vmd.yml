@@ -28,14 +28,6 @@
         name: libtcl8.6
         state: present
 
-
-#Install tk8.5
-
-    - name: Ensure tk8.5-dev  is installed
-      apt:
-        name: tk8.5-dev
-        state: present
-
 #Install tk8.6
 
     - name: Ensure tk8.6-dev  is installed
