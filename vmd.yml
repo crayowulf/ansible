@@ -52,6 +52,13 @@
         name: tk8.5-dev
         state: present
 
+#Install tk8.6
+
+    - name: Ensure tk8.6-dev  is installed
+      apt:
+        name: tk8.6-dev
+        state: present
+
 # Install FLTK
 
     - name: Ensure libfltk1.1-dev  is installed
