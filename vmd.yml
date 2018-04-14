@@ -30,20 +30,20 @@
 
 #Install tcl8.5
 
-    - name: Ensure tcl8.5  is NOT installed
+    - name: Ensure tcl8.5  is installed
       apt:
         name: tcl8.5
-        state: absent
+        state: present
 
-    - name: Ensure tcl8.5-dev  is NOT installed
+    - name: Ensure tcl8.5-dev  is installed
       apt:
         name: tcl8.5-dev
-        state: absent
+        state: present
 
-    - name: Ensure libtcl8.5  is NOT installed
+    - name: Ensure libtcl8.5  is installed
       apt:
         name: libtcl8.5
-        state: absent
+        state: present
 
 #Install tk8.5
 
