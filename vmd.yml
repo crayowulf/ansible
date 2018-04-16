@@ -86,6 +86,11 @@
         name: libtachyon-mt-0-dev
         state: present
 
+    - name: Ensure rlwrap is installed
+      apt:
+        name: rlwrap
+        state: present
+
 # Misc. tasks
 
     - name: Create symlink for libcudart_static.a
