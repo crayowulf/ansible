@@ -95,6 +95,3 @@
         state: link
         owner: nvidia
         mode: "u=rwx,g=rx,o=rx"
-
-    - name: Place /etc/ld.so.conf.d/libtachyon.conf (points VMD to proper libraries directory when on remote host)
-      template: src=/home/nvidia/files/common/libtachyon.conf dest=/etc/ld.so.conf.d/libtachyon.conf
