@@ -1,6 +1,6 @@
 ---
 - name: Setup for building VMD  www.ks.uiuc.edu/Research/vmd/
-  hosts: headNode
+  hosts: "{{ on_hosts }}"
   gather_facts: no
   remote_user: nvidia
   become: yes
@@ -95,3 +95,6 @@
         state: link
         owner: nvidia
         mode: "u=rwx,g=rx,o=rx"
+
+    - name: Place /etc/ld.so.conf.d/libtachyon.conf (points VMD to proper libraries directory when on remote host)
+      template: src=/home/nvidia/files/common/libtachyon.conf dest=/etc/ld.so.conf.d/libtachyon.conf
