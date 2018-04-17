@@ -1,0 +1,31 @@
+---
+#set up the worker nodes in the cluster
+- name: Setup for Arduino on workerNodes
+  hosts: workerNodes
+  gather_facts: no
+  remote_user: nvidia
+  become: yes
+  become_method: sudo
+  become_user: root
+
+  tasks:
+
+    - name: Ensure arduino is installed
+      apt:
+        name: arduino
+        state: present
+
+    - name: Ensure sysstat is installed
+      apt:
+        name: sysstat
+        state: present
+
+    - name: Ensure lm-sensors is installed
+      apt:
+        name: lm-sensors
+        state: present
+
+    - name: Ensure libncurses5-dev is installed
+      apt:
+        name: libncurses5-dev
+        state: present
