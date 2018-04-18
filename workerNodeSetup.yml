@@ -19,14 +19,6 @@
     - name: Place /etc/apt/sources.list (Enables universe repo)
       template: src=/home/nvidia/files/worker/sources.list dest=/etc/apt/sources.list
 
-    - name: Ensure iptables-persistent is installed
-      apt:
-        name: iptables-persistent
-        state: installed
-
-    - name: make sure iptables rules are in place
-      template: src=/home/nvidia/files/worker/iptables.rules dest=/etc/iptables/rules.v4
-
     - name: put jetson in high performance mode
       command: nvpmodel -m 0
 
