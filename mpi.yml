@@ -80,5 +80,3 @@
 
     - name: Place /etc/ld.so.conf.d/openmpi.conf (points openmpi to proper libraries directory when on remote host)
       template: src=/home/nvidia/files/common/openmpi.conf dest=/etc/ld.so.conf.d/openmpi.conf
-
-# end copied time zone setup steps
