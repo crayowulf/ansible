@@ -29,3 +29,8 @@
       apt:
         name: libncurses5-dev
         state: present
+
+    - name: Ensure qt5-default is installed (for building necessary kernel modules)
+      apt:
+        name: qt5-default
+        state: present
