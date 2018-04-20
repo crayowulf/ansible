@@ -203,3 +203,8 @@
       apt:
         name: lm-sensors
         state: present
+
+    - name: Ensure gtk-recordmydesktop is installed (record the screen for presentations)
+      apt:
+        name: gtk-recordmydesktop
+        state: present
