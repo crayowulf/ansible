@@ -7,3 +7,9 @@ localhost
 worker01 custom_hostname=worker01
 worker02 custom_hostname=worker02
 worker03 custom_hostname=worker03
+
+[allNodes]
+localhost
+worker01 custom_hostname=worker01
+worker02 custom_hostname=worker02
+worker03 custom_hostname=worker03
