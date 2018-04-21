@@ -1,7 +1,7 @@
 ---
 #set up the worker nodes in the cluster
 - name: Setup MPI on Worker Nodes
-  hosts: "{{ on_hosts }}"
+  hosts: allNodes
   gather_facts: no
   remote_user: nvidia
   become: yes

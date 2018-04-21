@@ -1,6 +1,6 @@
 ---
 - name: Setup for building VMD  www.ks.uiuc.edu/Research/vmd/
-  hosts: "{{ on_hosts }}"
+  hosts: allNodes
   gather_facts: no
   remote_user: nvidia
   become: yes
