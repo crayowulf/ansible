@@ -67,6 +67,9 @@
     - name: Enable IP Masquerading
       template: src=/home/nvidia/files/head/rc.local dest=/etc/rc.local
 
+    - name: Restart isc-dhcp-server service
+      service: name=isc-dhcp-server state=restarted
+
     - name: Place dnsmasq.conf.  This file tells dnsmasq to only listen on eth1.
       template: src=/home/nvidia/files/head/dnsmasq.conf dest=/etc/dnsmasq.conf
 
