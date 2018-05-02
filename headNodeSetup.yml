@@ -26,6 +26,9 @@
     - name: put jetson in high performance mode
       command: nvpmodel -m 0
 
+    - name: Really put jetson in high performance mode (max CPU, GPU, EMC frequencies)
+      command: /home/nvidia/jetson_clocks.sh
+
     - name: Create /home2
       file:
         path: /home2
