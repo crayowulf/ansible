@@ -128,8 +128,5 @@
         name: lm-sensors
         state: present
 
-    - name: Ensure kazam is installed (screen recording for presentations)
-      apt:
-        name: kazam
-        state: present
+
 # end copied time zone setup steps

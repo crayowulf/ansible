@@ -210,7 +210,7 @@
         name: lm-sensors
         state: present
 
-    - name: Ensure gtk-recordmydesktop is installed (record the screen for presentations)
+    - name: Ensure kazam is installed (screen recording for presentations)
       apt:
-        name: gtk-recordmydesktop
+        name: kazam
         state: present
